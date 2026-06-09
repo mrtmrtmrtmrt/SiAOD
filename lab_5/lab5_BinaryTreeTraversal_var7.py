@@ -6,16 +6,6 @@ class TreeNode:
         self.left = None        # левый потомок
         self.right = None       # правый потомок
 
-def insert(root, value):
-    """Добавить значение в бинарное дерево поиска."""
-    if root is None:
-        return TreeNode(value)
-    if value < root.value:
-        root.left = insert(root.left, value)
-    else:
-        root.right = insert(root.right, value)
-    return root
-
 def preorder(root, result=None):
     if result is None:
         result = []
