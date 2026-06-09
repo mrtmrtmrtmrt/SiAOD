@@ -65,7 +65,13 @@ def left_view(root):
             if node.right:
                 queue.append(node.right)
     return result
-
+def test_all_funcs(name,tree):
+    print("Тест дерева:", name)
+    print(preorder(tree))
+    print(inorder(tree))
+    print(postorder(tree))
+    print(level_order(tree))
+    print(left_view(tree))
 if __name__ == "__main__":
     tree_null = None
     tree_manual = TreeNode(1)
@@ -80,5 +86,7 @@ if __name__ == "__main__":
     tree_only_right.right.right = TreeNode(20)
     tree_only_right.right.right.right = TreeNode(25)
     tree_only_right.right.right.right.right = TreeNode(30)
-    print(left_view(tree_manual))
+    test_all_funcs("Пустое дерево", tree_null)
+    test_all_funcs("Обычное дерево", tree_manual)
+    test_all_funcs("Только правая часть дерева", tree_only_right)
 
